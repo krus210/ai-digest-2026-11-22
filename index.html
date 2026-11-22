@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram AI Digest — 2026-11-22</title>
+<meta name="theme-color" content="#f5f0e8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap">
+<style data-reading-theme="v1">
+/* Книжная тема дайджестов v1. Описание и примеры: reading-theme.md. Вставляет apply-reading-theme.py. */
+:root{
+  --bg:#f5f0e8; --card:#fffdf9; --ink:#2b2826; --muted:#6b655f; --faint:#9a938b;
+  --line:#e8dfd2; --accent:#b0603d; --accent-soft:#f7e4d7; --sage:#4d6a50; --sage-soft:#e3ede2;
+  --lav-soft:#ebe7f5; --sky-soft:#e2ecf3; --code:#f1eae0;
+  --r:22px; --gap:12px;
+  --sans:"Golos Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.62 var(--sans);overflow-wrap:break-word}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+img{max-width:100%;height:auto}
+b,strong{font-weight:600}
+h1,h2,h3,h4{font-family:var(--sans);color:var(--ink);margin:0;letter-spacing:-.01em}
+h1{font-size:44px;line-height:1.1;font-weight:700;margin:6px 0 16px}
+h2{font-size:30px;line-height:1.15;font-weight:700}
+h3{font-size:24px;line-height:1.25;font-weight:700}
+h3 a{color:inherit}
+h4{font-size:18px;line-height:1.3;font-weight:600}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:0 0 7px}
+li::marker{color:var(--accent)}
+code,.k{font-family:var(--mono);font-size:.86em;background:var(--code);color:#5b4636;padding:1px 5px;border-radius:5px;overflow-wrap:anywhere;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+pre{background:var(--code);border-radius:12px;padding:12px 14px;overflow:auto;font-size:14px}
+pre code{background:none;padding:0}
+.accent,.em{color:var(--accent)}
+.hidden{display:none!important}
+[hidden]{display:none!important}
+#progress,.dot,.lk,.shot .zoom:not(button),.rv-hide{display:none!important}
+.rv{opacity:1!important;transform:none!important}
+
+/* Layout */
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+main{display:block}
+section{margin:0 auto}
+footer{text-align:center;color:var(--faint);font-size:14px;padding:48px 20px 64px}
+
+/* Navigation: one line, scrolls sideways on phones */
+nav{position:sticky;top:0;z-index:40;background:rgba(245,240,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;color:var(--muted);font-size:15px;padding:6px 12px;border-radius:999px}
+.nav-links a:hover{text-decoration:none;color:var(--ink)}
+.nav-links a.active{background:var(--accent-soft);color:var(--accent)}
+.nav-links small{color:var(--faint);margin-left:3px}
+
+/* Hero */
+.hero{padding-top:44px;padding-bottom:8px}
+header.hero:not(.wrap){max-width:none;padding-left:0;padding-right:0}
+.eyebrow{display:inline-block;color:var(--accent);font-size:14px;font-weight:600;letter-spacing:.02em;margin:0 0 4px}
+.sub,.hero>.lead,.hero .wrap>.lead{font-size:19px;line-height:1.55;color:var(--muted);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip{background:var(--card);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--muted)}
+.chip b{color:var(--ink)}
+
+/* Blocks: white rounded panels on pastel background */
+.talk,.box,.review-box,.watch-item,.meta,.funnel,.trick,.item,.card,.radar-wrap,.filtered{background:var(--card);border-radius:var(--r);padding:28px 32px;margin:0 0 var(--gap)}
+.talk .lab,.box h2{font-size:15px;font-weight:600;color:var(--accent);margin:0 0 8px;letter-spacing:0}
+.talk p:last-child,.box>*:last-child{margin-bottom:0}
+
+/* Section heads */
+.shead{display:flex;align-items:center;gap:12px;margin:56px 0 18px}
+.shead .num{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 8px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:16px}
+.shead .count{color:var(--faint);font-size:16px;font-weight:600}
+section>.lead,.wrap>.lead,.topic-intro .lead{color:var(--muted);font-size:17px;margin:-6px 0 18px}
+.topic-intro{margin:0}
+.grid,.tricks,.items,.watch{display:block}
+
+/* Card anatomy */
+.trick-head,.item-head,.card-top{display:block;margin:0 0 6px}
+.tnum{display:block;color:var(--faint);font-size:14px;font-weight:600;letter-spacing:.04em;margin:0 0 4px}
+.card-top{color:var(--faint);font-size:14px}
+.card-top span{margin-right:8px}
+.who,.byline,.card .meta,.date,.srcline{color:var(--muted);font-size:14.5px}
+.who,.byline{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:8px 0 18px}
+.byline span{color:var(--faint)}
+.au{font-weight:600}
+.src-tag,.rt,.lbl{color:var(--faint)}
+.cat,.tag{display:inline-block;background:var(--lav-soft);color:#5a5470;border-radius:999px;padding:1px 10px;font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.card .meta{background:none;padding:0;border-radius:0;margin:8px 0 6px}
+.orig{color:var(--faint);font-size:14.5px;font-style:italic;margin-bottom:12px}
+.lead-in,.gist,.copy p,.about p{font-size:17.5px}
+.problem{font-weight:400}
+.lab,.try-lab,.point-label,.flow-label,.apply-panel h4,.why b,.risk b,.gap b{display:block;font-size:15px;font-weight:600;color:var(--accent);margin:0 0 6px;letter-spacing:0;text-transform:none}
+.why b,.risk b,.gap b{display:inline;margin:0}
+.about,.key{margin:0 0 16px}
+.try,.apply-panel{background:var(--accent-soft);border-radius:16px;padding:16px 20px;margin:18px 0}
+.try ul,.apply-panel ol{margin-bottom:0}
+.measure{color:var(--muted)}
+.key-point{display:block;background:var(--sage-soft);border-radius:16px;padding:16px 20px;margin:18px 0}
+.key-point .point-label{color:var(--sage)}
+.key-point strong{display:block;font-size:18px;line-height:1.4;margin:0 0 6px}
+.key-point p{margin:0;color:var(--ink)}
+.flow-block{margin:18px 0}
+.flow-label span{color:var(--faint);font-weight:400}
+.mini-flow{list-style:none;padding:0;counter-reset:none}
+.mini-flow li{display:flex;gap:12px;align-items:baseline}
+.flow-index{color:var(--accent);font-weight:700;font-size:14px;min-width:22px}
+.apply-caption{color:var(--muted)}
+.why,.risk,.gap{margin:14px 0}
+.risk,.gap{color:var(--muted)}
+.srcline{margin-top:10px}
+details{margin:16px 0 4px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15.5px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";}
+details[open] summary::before{content:"− ";}
+details[open] summary{margin-bottom:10px}
+summary span{display:none}
+dl{margin:0}
+dt{font-weight:600;color:var(--accent);font-size:15px;margin-top:10px}
+dd{margin:2px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:15.5px}
+.links a{font-weight:600}
+.links svg,.src svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;vertical-align:-1px;margin-right:4px}
+
+/* Figures */
+figure{margin:20px 0;max-width:100%}
+.shot{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in;margin-inline:auto}
+.shot img{display:block;width:auto;max-width:100%;height:auto;margin-inline:auto}
+.shot .badge{position:absolute;top:8px;left:8px;background:rgba(255,253,249,.92);color:var(--muted);font-size:12px;padding:2px 9px;border-radius:999px}
+button.zoom{all:unset;display:block;width:100%;cursor:zoom-in}
+button.zoom span{display:none}
+figcaption{color:var(--muted);font-size:14.5px;line-height:1.5;margin-top:8px}
+figcaption b{color:var(--ink)}
+.figbar{color:var(--muted);font-size:14px}
+
+/* Watch / radar / plan / meta */
+.watch-item h4{margin:0 0 4px}
+.watch-item .who{margin:4px 0 10px}
+.watch-item p:last-of-type{margin-bottom:8px}
+.watch-item .src{font-weight:600}
+.radar{margin:0;padding-left:20px}
+.radar li{margin-bottom:12px}
+.radar a{text-decoration:none!important}
+.checks{display:grid;gap:8px}
+.check{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:16px;padding:14px 18px;cursor:pointer;user-select:none}
+.check .box{width:22px;height:22px;flex:0 0 auto;border:2px solid var(--faint);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-top:2px;background:none;padding:0}
+.check .box svg{width:13px;height:13px;stroke:#fff;stroke-width:3;fill:none;opacity:0}
+.check.done .box{background:var(--sage);border-color:var(--sage)}
+.check.done .box svg{opacity:1}
+.check.done .txt{color:var(--faint);text-decoration:line-through}
+.check .txt{flex:1}
+.check .when{color:var(--muted);font-size:13px;background:var(--sky-soft);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.review-box label{display:flex;gap:12px;align-items:flex-start;margin:0 0 10px;cursor:pointer}
+.review-box label:last-child{margin-bottom:0}
+.review-box input[type=checkbox]{width:20px;height:20px;margin-top:4px;accent-color:var(--sage);flex:0 0 auto}
+.meta{font-size:14.5px;color:var(--muted)}
+.meta>div{margin-bottom:4px}
+.meta b{color:var(--ink);font-weight:600;margin-right:6px}
+.funnel{color:var(--muted)}
+.filtered{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14.5px;color:var(--muted)}
+.plan{background:var(--card);border-radius:var(--r);padding:24px 28px 24px 48px}
+.top5{padding-left:22px;margin:0}
+.top5 li span{display:block;color:var(--muted);font-size:15px}
+.toc{list-style:none;padding:0;margin:0 0 14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc b{color:var(--faint);font-weight:600}
+
+/* Search and filters */
+.toolbar,.tools-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.search-label{display:block;width:100%}
+.search-label span{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+input[type=search],.search{width:100%;flex:1 1 220px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 16px;outline:none}
+input[type=search]:focus{border-color:var(--accent)}
+.flt,.reset{font:inherit;font-size:14.5px;border:0;border-radius:999px;padding:7px 14px;background:var(--bg);color:var(--muted);cursor:pointer}
+.box .flt{background:var(--bg)}
+.flt.on{background:var(--accent);color:#fff}
+.reset{background:none;color:var(--accent);font-weight:600}
+.result,.found,.empty{color:var(--muted);font-size:14.5px;margin:6px 0 0}
+
+/* Desktop sidebar (AI Engineering list) */
+.side{display:none}
+@media (min-width:1320px){
+  .side{display:block;position:fixed;left:24px;top:84px;width:250px;max-height:calc(100vh - 110px);overflow:auto;font-size:13.5px;line-height:1.4;scrollbar-width:thin}
+  .side ol{padding-left:22px;margin:0}
+  .side li{margin-bottom:8px}
+  .side a{color:var(--muted)}
+}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:200;background:rgba(43,40,38,.9);display:none;flex-direction:column;align-items:center;justify-content:center;padding:64px 16px 32px;overflow:auto;cursor:zoom-out}
+#lb.on,#lb.open{display:flex}
+#lb img{max-width:94vw;max-height:78vh;border-radius:12px;background:#fff}
+#lbbox,.lbinner{max-width:94vw;background:#fff;border-radius:12px;overflow:auto;max-height:calc(100vh - 140px)}
+#lbbox img,.lbinner img{display:block;width:100%;height:auto;max-width:100%;max-height:none;border-radius:0}
+#lb .lbcap{color:#f5f0e8;font-size:14.5px;line-height:1.5;margin-top:14px;max-width:760px;text-align:center}
+#lb .lbbtn,#lb .lbsrc{margin-top:12px;display:inline-flex;gap:8px;align-items:center;background:var(--card);color:var(--ink);padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px;min-height:44px}
+#lb .lbbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+#lb .close{position:fixed;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:26px;line-height:44px;text-align:center;cursor:pointer;padding:0}
+
+/* Phones */
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .hero{padding-top:28px}
+  h1{font-size:31px}
+  h2{font-size:25px}
+  h3{font-size:21px}
+  .sub,.hero>.lead,.hero .wrap>.lead{font-size:17px}
+  .talk,.box,.review-box,.watch-item,.meta,.funnel,.trick,.item,.card,.filtered{padding:20px 18px;border-radius:18px}
+  .try,.apply-panel,.key-point{padding:14px 16px;margin-left:-4px;margin-right:-4px}
+  .lead-in,.gist,.copy p,.about p{font-size:17px}
+  .shead{margin-top:40px}
+  .plan{padding:20px 18px 20px 38px}
+  .nav-in{padding:8px 12px;gap:10px}
+  .brand{font-size:14px}
+  .check{padding:12px 14px}
+  .check{flex-wrap:wrap}
+  .check .when{margin-left:34px}
+  figure{margin:16px -6px}
+  article .about,article .key{padding:0!important;background:none!important;border:0!important}
+}
+</style>
+
+<style data-visual-html-responsive="v1">
+:root {
+  --page-gutter: 22px;
+  --gutter: 22px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: visible !important;
+}
+
+.wrap,
+.nav-in,
+footer,
+[data-mobile-container] {
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: var(--page-gutter) !important;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+.grid > *,
+.hero-grid > *,
+.split > *,
+.quotes > *,
+.checks > *,
+.facts > *,
+.tools > *,
+.debate > *,
+.nav-links,
+.navlinks,
+.shead > *,
+.sec-head > *,
+.tl-item,
+.timeline > *,
+[data-mobile-stack] > * {
+  min-width: 0;
+}
+
+img,
+video,
+audio,
+canvas,
+iframe,
+figure {
+  max-width: 100% !important;
+}
+
+img,
+video,
+canvas {
+  height: auto;
+}
+
+video,
+audio,
+iframe {
+  display: block;
+  width: 100% !important;
+}
+
+iframe {
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+pre,
+table,
+.tbl,
+[data-mobile-scroll] {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+table,
+.tbl {
+  display: block;
+}
+
+[data-mobile-scroll] > svg {
+  width: 640px !important;
+  min-width: 640px !important;
+  max-width: none !important;
+  height: auto;
+}
+
+.k,
+.srcline,
+.srcline code,
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.tc,
+.t,
+.timecode,
+.trick-head h3,
+.item-head h3,
+.check .txt,
+.talk p,
+.trick p,
+.trick li,
+.item p,
+.item li,
+.card p,
+.card li,
+.quote .q,
+.quote .ru,
+blockquote .ru,
+.tl-item p,
+.timeline p,
+.deb li,
+.callout,
+.fact .d,
+.tool .desc,
+[data-mobile-copy],
+[data-mobile-copy] p,
+[data-mobile-copy] li,
+[data-mobile-copy] dd,
+[data-mobile-wrap],
+code:not(pre code),
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.links .src {
+  max-width: 100%;
+}
+
+.src,
+.links .src {
+  white-space: normal !important;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: 18px;
+    --gutter: 18px;
+    --radius: 14px;
+  }
+
+  .nav-in,
+  nav .wrap {
+    min-height: 60px;
+    height: auto !important;
+    gap: 8px !important;
+    padding-block: 8px !important;
+  }
+
+  .brand,
+  .navbrand {
+    display: none !important;
+  }
+
+  .nav-links,
+  .navlinks {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-bottom: 2px;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .nav-links::-webkit-scrollbar,
+  .navlinks::-webkit-scrollbar {
+    display: block;
+    height: 2px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  [data-seek] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  a[data-seek],
+  button[data-seek],
+  span[data-seek] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .navlinks a {
+    flex: 0 0 auto;
+    padding: 9px 8px !important;
+  }
+
+  section {
+    padding-block: 52px 36px !important;
+    scroll-margin-top: 56px !important;
+  }
+
+  header.hero,
+  .hero {
+    padding-block: 24px 24px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 36px) !important;
+    line-height: 1.1;
+    margin-top: 18px;
+  }
+
+  .g2,
+  .g3,
+  .g4,
+  .grid:not(.g2):not(.g3):not(.g4),
+  .hero-grid,
+  .split,
+  .quotes,
+  .checks,
+  .facts,
+  .tools,
+  .debate,
+  [data-mobile-stack="grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  [data-mobile-stack="flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]):has(> svg[viewBox]) {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]) {
+    width: 640px !important;
+    min-width: 640px !important;
+    max-width: none !important;
+    height: auto;
+  }
+
+  .talk,
+  .trick,
+  .item,
+  .card,
+  .quote,
+  .fact,
+  .check:not(ul),
+  .check > li,
+  .deb,
+  .thesis,
+  .thesis-card,
+  blockquote,
+  .callout,
+  [data-mobile-card] {
+    padding: 20px 18px !important;
+  }
+
+  blockquote {
+    margin-inline: 0 !important;
+  }
+
+  .trick-head,
+  .item-head,
+  .shead,
+  .sec-head,
+  .code .bar,
+  .tl-head,
+  blockquote footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .shead,
+  .sec-head {
+    align-items: flex-start;
+    margin-bottom: 20px !important;
+  }
+
+  .shead h2,
+  .sec-head h2 {
+    font-size: 24px !important;
+  }
+
+  .shead .src,
+  .sec-head .src {
+    margin-left: 0 !important;
+  }
+
+  .trick-head .tnum,
+  .item-head .tnum {
+    min-width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .trick-head h3,
+  .item-head h3 {
+    padding-top: 4px;
+    font-size: 20px;
+  }
+
+  .who {
+    padding-left: 0;
+  }
+
+  .about,
+  .key,
+  .try,
+  .risk {
+    padding: 15px 16px;
+  }
+
+  .hero .sub,
+  .hero .lede,
+  .hero .lead,
+  .lead,
+  .lede,
+  .sec-sub,
+  .talk p,
+  .trick p,
+  .trick li,
+  .item p,
+  .item li,
+  .card p,
+  .card li,
+  .quote .q,
+  .quote .ru,
+  blockquote .ru,
+  .tl-item p,
+  .timeline p,
+  .check .txt,
+  .check > li,
+  .deb li,
+  .callout,
+  .fact .d,
+  .tool .desc,
+  .watch-item p,
+  [data-mobile-copy],
+  [data-mobile-copy] p,
+  [data-mobile-copy] li,
+  [data-mobile-copy] dd {
+    font-size: 16px !important;
+  }
+
+  .fact {
+    align-items: flex-start;
+  }
+
+  .fact .v {
+    min-width: 0 !important;
+  }
+
+  .tl {
+    padding-left: 24px;
+  }
+
+  .tl-thumbs .shot {
+    width: 100% !important;
+  }
+
+  .links {
+    align-items: stretch;
+  }
+
+  .links .src {
+    min-height: 44px;
+    padding: 9px 11px;
+  }
+
+  .check:not(ul) {
+    flex-wrap: wrap;
+  }
+
+  .check .txt {
+    flex: 1 1 220px;
+  }
+
+  #lb,
+  .lightbox {
+    padding: 16px !important;
+  }
+
+  footer {
+    padding-block: 36px 60px !important;
+  }
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-in">
+  <div class="brand"><span class="dot"></span>Telegram AI Digest</div>
+  <div class="nav-links">
+    <a href="#talk">Что&nbsp;важно</a><a href="#items">Выводы</a><a href="#watch">На&nbsp;радаре</a><a href="#plan">План</a>
+  </div></div></nav>
+
+<header class="wrap hero">
+  <span class="eyebrow">● TELEGRAM AI DIGEST · BACKEND / AGENTS</span>
+  <h1>AI-дайджест недели</h1>
+  <p class="sub">Практичные приёмы и сдвиги из AI- и agent-каналов Telegram для Go-backend инженера: что попробовать или поменять в работе на этой неделе.</p>
+  <div class="chips">
+    <span class="chip">🗓 окно <b>16–22 ноября 2026</b></span>
+    <span class="chip">⚡ выводов: <b>8</b></span>
+    <span class="chip">👀 на радаре: <b>3</b></span>
+    <span class="chip">📡 сообщений прочитано: <b>70</b></span>
+  </div>
+  <div class="talk rv" id="talk">
+    <div class="lab">💡 Что важно на этой неделе</div>
+    <p>Неделя прошла под знаком безопасности: в nginx нашли критические уязвимости через HTTP/2, и сразу несколько авторов поручили проверку своей инфраструктуры агентам. Главный приём из этих историй — <span class="accent">дать агенту репозитории или реестр софта и попросить список рисков со ссылками на файлы, ничего не меняя без подтверждения</span>, а работу агента-сторожа проверить откатом к состоянию до известного фикса. Вторая линия — дисциплина контекста: новая сессия на каждую фазу задачи и спеки-слайсы перед долгим прогоном агента. Много места заняли впечатления от новых моделей OpenAI и Google без проверяемых выводов и анонсы эфиров.</p>
+  </div>
+</header>
+
+<section id="items" class="wrap">
+  <div class="shead rv"><span class="num">⚡</span><h2>Главные практические выводы</h2></div>
+  <p class="funnel rv">Все 70 сообщений с текстом из 16 каналов просмотрены. 39 из них прочитаны целиком, 20 прошли попытку опровержения, 8 её выдержали и стали карточками, часть из них — с оговорками в блоке «Риск». Для каждой карточки проверены вложения поста: фото, альбомы и скриншоты.</p>
+  <div class="items">
+    <article class="item rv" id="item-1" data-card-id="1708044808/545">
+      <div class="item-head"><span class="tnum">01</span><h3>Разводить план, реализацию и ревью по разным сессиям</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/orgprog" target="_blank" rel="noopener">Организованное программирование</a>
+        <span class="date">19 ноя</span></div>
+      <p class="gist">Автор канала сформулировал правило: новая задача — новая сессия, даже в том же проекте. Менее очевидная часть: планирование, реализация и ревью одной фичи тоже стоит разделять, а ревью всегда запускать на чистом контексте.</p>
+      
+      <p class="why"><b>Почему важно:</b> при планировании агент перебирает противоречивые гипотезы, и этот мусор остаётся в контексте реализации. Отсюда, по словам автора, ошибки вида «ой, я перепутал». Ревью в той же сессии подталкивает модель к выводам, которые она уже сделала раньше.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Возьмите следующую фичу Go-сервиса и сохраните план в файл, например <span class="k">docs/plan.md</span>.</li><li>Сделайте <span class="k">/new</span> и дайте агенту реализацию только по этому файлу. Если контекст нужно перенести, используйте встроенную команду handoff или скилл, как советует автор.</li><li>После реализации снова <span class="k">/new</span> и попросите ревью diff без истории планирования.</li><li class="measure">Сравните с фичей, сделанной в одной сессии: сколько раз агент путал отброшенные варианты плана с принятыми и сколько замечаний нашло ревью.</li></ul></div>
+      <p class="risk"><b>Риск</b> Порог «50% заполненности контекста» автор сам называет ничем не подтверждённым. Разделение по фазам тоже подано как опыт, без замеров.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/orgprog/545" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a></div>
+      <div class="srcline"><b>Источник:</b> Организованное программирование, 19 ноя, <code>2026-11-16_2026-11-22_orgprog.json</code>, id=545</div>
+    </article>
+    <article class="item rv" id="item-2" data-card-id="1480197231/855">
+      <div class="item-head"><span class="tnum">02</span><h3>Поручить агенту read-only аудит nginx в своих репозиториях</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/countwithsasha" target="_blank" rel="noopener">Поляков считает: AI, код и кейсы</a>
+        <span class="date">20 ноя</span></div>
+      <p class="gist">В nginx нашли критические уязвимости через HTTP/2, исправления уже вышли. Автор поста дал готовый промпт, по которому агент обходит доступные репозитории, ищет конфиги nginx, Dockerfile и Docker Compose и оценивает риск.</p>
+      
+      <p class="why"><b>Почему важно:</b> часто nginx в backend-команде живёт не в коде сервиса, а в образах, compose-файлах и инструкциях по развёртыванию. Ручной поиск по всем репозиториям долгий, а промпт явно запрещает агенту что-либо менять без подтверждения.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Дайте агенту доступ к репозиториям и отправьте промпт из поста: <span class="k">Найди конфигурации Nginx, Dockerfile, Docker Compose и инструкции по развёртыванию. Проверь версии, настройки HTTP/2 и HTTP/3 и другие условия эксплуатации опубликованных CVE.</span></li><li>Допишите последние строки промпта автора: <span class="k">Составь список проектов с оценкой риска и ссылками на конкретные файлы. Предложи план исправлений. Ничего не меняй без моего подтверждения.</span></li><li class="measure">Откройте каждый файл из списка и сверьте версию nginx с официальным advisory. Отдельно проверьте, не пропустил ли агент репозитории, где nginx приходит из базового образа.</li></ul></div>
+      <p class="risk"><b>Риск</b> В посте нет номеров CVE и исправленных версий. Агент будет опираться на внешний сайт с описанием уязвимостей, поэтому итоговые версии сверяйте с первоисточником nginx.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/countwithsasha/855" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a><a class="src" href="https://t.me/oestick/595" target="_blank" rel="noopener">Дополнение: тот же сюжет у «AI и грабли»</a></div>
+      <div class="srcline"><b>Источник:</b> Поляков считает: AI, код и кейсы, 20 ноя, <code>2026-11-16_2026-11-22_countwithsasha.json</code>, id=855</div>
+    </article>
+    <article class="item rv" id="item-3" data-card-id="1245391218/1383">
+      <div class="item-head"><span class="tnum">03</span><h3>Перед долгим прогоном Codex разбить работу на спеки-слайсы</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/kdoronin_blog" target="_blank" rel="noopener">Константин Доронин</a>
+        <span class="date">20 ноя</span></div>
+      <p class="gist">Автор перенёс игру 2002 года с Windows на Go и Ebitengine почти за один прогон Codex. Перед стартом агент изучил исходный exe, затем через скиллы, включая Ship SDD Slice, составил 5 спек. После этого Codex работал 23 часа до выполнения всех спек.</p>
+      
+      <p class="why"><b>Почему важно:</b> скилл заставляет агента сначала писать спеку на каждую задачу, причём слайсом: функциональность целиком, без деления на фронтенд и бэкенд. Второй опорный приём — computer/browser use: агент сам запускал исходную версию и две новые и сравнивал их.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Для следующей большой задачи попросите агента сначала составить спеки слайсами: каждая описывает сквозную функцию от API до хранения.</li><li>Дайте агенту способ запустить и эталон, и новую версию, например старый и новый бинарник сервиса на одном наборе запросов.</li><li>Запускайте реализацию с условием из поста: работать, пока все спеки не выполнены и не протестированы.</li><li class="measure">Посчитайте, сколько багов нашлось после прогона и сколько из них агент исправил по одному текстовому баг-репорту. У автора было 4 мелких бага и одно зависание из-за костыля оригинала, который агент сначала упустил.</li></ul></div>
+      <p class="risk"><b>Риск</b> Скиллы Ship SDD Slice и Ponytail не опубликованы. Прогон съел около 120% недельного лимита подписки за $200, а расплывчатый запрос на мобильную версию пришлось целиком откатить.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/kdoronin_blog/1383" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a></div>
+      <div class="srcline"><b>Источник:</b> Константин Доронин, 20 ноя, <code>2026-11-16_2026-11-22_kdoronin_blog.json</code>, id=1383</div>
+    </article>
+    <article class="item rv" id="item-4" data-card-id="1943579488/999">
+      <div class="item-head"><span class="tnum">04</span><h3>Проверить агента-сторожа уязвимостей откатом к состоянию до фикса</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/llm_under_hood" target="_blank" rel="noopener">LLM под капотом</a>
+        <span class="date">21 ноя</span></div>
+      <p class="gist">Автор завёл двух агентов безопасности. Claude ищет новости об уязвимостях и сверяет их с реестром установленного софта. Codex с доступом к внутренним системам держит карту системы актуальной и перепроверяет выводы первого.</p>
+      <figure><div class="shot" data-full="assets/999-caddy-cve-alert.jpg" data-href="https://t.me/llm_under_hood/999" data-w="892" data-h="1062" style="max-width:min(100%,446px);margin-inline:auto" data-cap="Скриншот из поста. Пример алерта агента, не калибровочный прогон из текста: «VERIFY TODAY — Caddy HTTP/1 crash»: затронутые хосты с версиями Caddy и Go, условие эксплуатации (request_body с max_size перед reverse_proxy) и что проверить в Caddyfile."><span class="badge">скриншот из поста</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></span><img src="assets/999-caddy-cve-alert.jpg" alt="Алерт агента: VERIFY TODAY — Caddy HTTP/1 crash, CVE-2026-97054 / GO-2026-6859" width="892" height="1062" loading="lazy" ></div><figcaption><b>Скриншот из поста.</b> Пример алерта агента, не калибровочный прогон из текста: «VERIFY TODAY — Caddy HTTP/1 crash»: затронутые хосты с версиями Caddy и Go, условие эксплуатации (request_body с max_size перед reverse_proxy) и что проверить в Caddyfile.</figcaption></figure>
+      <p class="why"><b>Почему важно:</b> агент, который молчит, может молчать и потому, что сломан. Автор проверил это калибровкой: откатил карту систем до состояния перед фиксом CVE-2026-97032, и агент прислал алерт. Второй прогон на актуальной карте ничего не нашёл.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Соберите реестр того, что реально крутится на ваших хостах: версии Go, прокси, базовых образов. На скриншоте агент брал их из метаданных сборки бинарников.</li><li>Попросите агента сверить реестр со свежими уязвимостями и прислать алерт с условием эксплуатации и командой проверки, как в отчёте про Caddy на скриншоте.</li><li>Подмените в реестре одну версию на заведомо уязвимую и повторите прогон.</li><li class="measure">Агент должен поднять тревогу на подменённой версии и промолчать на актуальной. Если он молчит в обоих случаях, ему не хватает данных о системе.</li></ul></div>
+      <p class="risk"><b>Риск</b> Промпты, расписание и формат реестра автор не показал, всё работает в его собственной инфраструктуре BitGN. Повторять придётся со своим набором инструментов.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/llm_under_hood/999" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a><a class="src" href="https://t.me/llm_under_hood/998" target="_blank" rel="noopener">Дополнение: промпт аудита серверов с топ-3 уязвимостей</a></div>
+      <div class="srcline"><b>Источник:</b> LLM под капотом, 21 ноя, <code>2026-11-16_2026-11-22_llm_under_hood.json</code>, id=999</div>
+    </article>
+    <article class="item rv" id="item-5" data-card-id="1943579488/994">
+      <div class="item-head"><span class="tnum">05</span><h3>Сверить настройку агента с пятью принципами безопасности OpenAI и Anthropic</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/llm_under_hood" target="_blank" rel="noopener">LLM под капотом</a>
+        <span class="date">17 ноя</span></div>
+      <p class="gist">Автор канала свёл общие принципы из трёх гайдов: OpenAI «Securing persistent agents like OpenClaw at OpenAI», Anthropic «Building always-on agents» и «Operate Claude Managed Agents inside your security perimeter». По его словам, принципы у компаний схожи.</p>
+      
+      <p class="why"><b>Почему важно:</b> каждый принцип можно сверить со своей настройкой. Ключи лежат вне доступа агента и подменяются на настоящие при вызове сервиса, есть список разрешённых сервисов и сайтов, память хранится в файловой системе, за происходящим следит независимый агент, а полномочия и доступы разделены между агентами.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Выпишите, какие ключи и токены видит ваш агент в окружении и файлах репозитория.</li><li>Для своего агента пройдите по пяти принципам из поста и отметьте, какие уже выполнены.</li><li>В своём проекте можно начать с первого пункта: убрать из окружения агента хотя бы один боевой ключ.</li><li class="measure">Повторите проход через неделю и посчитайте, сколько из пяти принципов выполнено.</li></ul></div>
+      <p class="risk"><b>Риск</b> Ссылок на сами гайды и конфигураций в посте нет, гайды написаны про постоянно работающих агентов. Как реализовать подмену ключей, придётся смотреть в первоисточниках.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/llm_under_hood/994" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a></div>
+      <div class="srcline"><b>Источник:</b> LLM под капотом, 17 ноя, <code>2026-11-16_2026-11-22_llm_under_hood.json</code>, id=994</div>
+    </article>
+    <article class="item rv" id="item-6" data-card-id="1466120158/4844">
+      <div class="item-head"><span class="tnum">06</span><h3>Проверить бессрочный кэш GPT-6.2 Astra на возобновлённой сессии</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/ai_newz" target="_blank" rel="noopener">эйай ньюз</a>
+        <span class="date">17 ноя</span></div>
+      <p class="gist">OpenAI выпустила GPT-6.2 Astra и Sol. По словам автора, кэш на Astra теперь живёт бесконечно, поэтому сессия, к которой вернулись после ночи или выходных, будет тратить меньше квоты.</p>
+      
+      <p class="why"><b>Почему важно:</b> автор называет дорогой кэш главным препятствием, из-за которого на подписке за $200 не получалось полностью работать на Astra. По логике автора, длинную сессию тогда выгоднее продолжать, чем начинать заново.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Оставьте одну долгую сессию на Astra открытой на ночь и продолжите её утром.</li><li>Для сравнения начните утром новую сессию с той же задачей и тем же стартовым контекстом.</li><li class="measure">Сравните расход квоты в первом сообщении после перерыва в обоих вариантах.</li></ul></div>
+      <p class="risk"><b>Риск</b> Замеров расхода в посте нет, а бессрочный кэш описан со слов автора. Распространяется ли он на агентные сессии и API, сверьте с анонсом OpenAI.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/ai_newz/4844" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a><a class="src" href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener">Анонс OpenAI</a></div>
+      <div class="srcline"><b>Источник:</b> эйай ньюз, 17 ноя, <code>2026-11-16_2026-11-22_ai_newz.json</code>, id=4844</div>
+    </article>
+    <article class="item rv" id="item-7" data-card-id="2293112404/481">
+      <div class="item-head"><span class="tnum">07</span><h3>Спрашивать агента о практиках по транскриптам докладов</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/the_ai_architect" target="_blank" rel="noopener">Тимур Хахалев про AI Coding</a>
+        <span class="date">20 ноя</span></div>
+      <p class="gist">Автор канала показал агрегатор докладов по ИИ на русском с CLI и skill. Агент ищет доклады с мировых конференций, читает их транскрипты и через пару минут отвечает со ссылками на видео.</p>
+      <figure><div class="shot" data-full="assets/481-agent-evals-answer.jpg" data-href="https://t.me/the_ai_architect/481" data-w="1984" data-h="1436" style="max-width:min(100%,992px);margin-inline:auto" data-cap="Скриншот из поста. Ответ агента на вопрос «как правильно делать evals для скиллов?»: пересказ доклада Philipp Schmid «Don&#x27;t Ship Skills Without Evals» со ссылками на таймкоды t=643, t=1086, t=1100."><span class="badge">скриншот из поста</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></span><img src="assets/481-agent-evals-answer.jpg" alt="Ответ агента со skill giftsofprometheus на вопрос, как делать evals для скиллов" width="1984" height="1436" loading="lazy" ></div><figcaption><b>Скриншот из поста.</b> Ответ агента на вопрос «как правильно делать evals для скиллов?»: пересказ доклада Philipp Schmid «Don't Ship Skills Without Evals» со ссылками на таймкоды t=643, t=1086, t=1100.</figcaption></figure>
+      <p class="why"><b>Почему важно:</b> вопрос вроде «как в индустрии делают evals для агентов» обычно уходит в поиск по блогам. Здесь ответ собран из докладов, и у каждого пункта есть ссылка на доклад с таймкодом, так что первоисточник можно проверить.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Просмотрите открытый репозиторий skill на GitHub и установите его командой со страницы проекта: <span class="k">npx skills add giftsofprometheus/giftsofprometheus-cli</span>.</li><li>Задайте агенту вопрос по текущей задаче, например как делать evals для скиллов, как на скриншоте автора.</li><li class="measure">Откройте два-три таймкода из ответа и проверьте, что доклад говорит то же, что пересказал агент.</li></ul></div>
+      <p class="risk"><b>Риск</b> Команда установки есть только на странице по ссылке из поста, для транскриптов нужен аккаунт. Это сторонний код в агенте, а полноту и точность ответов пост не подтверждает.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/the_ai_architect/481" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a><a class="src" href="https://giftsofprometheus.com/f/skill" target="_blank" rel="noopener">Страница skill</a></div>
+      <div class="srcline"><b>Источник:</b> Тимур Хахалев про AI Coding, 20 ноя, <code>2026-11-16_2026-11-22_the_ai_architect.json</code>, id=481</div>
+    </article>
+    <article class="item rv" id="item-8" data-card-id="1758034592/5207">
+      <div class="item-head"><span class="tnum">08</span><h3>Считать, сколько раз агенту напоминают одну инструкцию</h3></div>
+      <div class="who"><span class="lbl">источник:</span>
+        <a class="au" href="https://t.me/book_cube" target="_blank" rel="noopener">Книжный куб</a>
+        <span class="date">19 ноя</span></div>
+      <p class="gist">Автор канала пересказал доклад основателя Warp о «фабрике ПО». Путь задачи от тикета до ревью описывается правилами в репозитории. Система Warp насчитала 37 случаев, когда агенты начали реализацию, пропустив подходящие инструкции.</p>
+      
+      <p class="why"><b>Почему важно:</b> когда агент пропускает инструкцию, разработчик обычно напоминает о ней в чате, и никто не знает, сколько коллег сделали то же самое. Счёт таких случаев показывает, какое правило пора чинить для всех.</p>
+      <div class="try"><div class="try-lab">⚡ Как применить</div>
+        <ul><li>Неделю записывайте в общий файл команды каждый случай, когда пришлось напомнить агенту правило из <span class="k">AGENTS.md</span>.</li><li>Отберите промахи, которые несколько инженеров ловят на ревью. Автор называет их точкой старта.</li><li>Перепишите в <span class="k">AGENTS.md</span> правило, о котором напоминали чаще всего, так, чтобы его нельзя было прочитать двояко. Это наш вывод из поста: автор говорит о поправке правил фабрики, без деталей для одной команды.</li><li class="measure">Сравните число напоминаний по исправленному правилу за неделю до правки и после.</li></ul></div>
+      <p class="risk"><b>Риск</b> Ориентир Warp — команда примерно из десяти инженеров. Одному разработчику, по словам автора, может хватить агента, инструкций в репозитории и тестов в CI.</p>
+      <div class="links"><span class="lk">🔗</span>
+        <a class="src" href="https://t.me/book_cube/5207" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Пост</a></div>
+      <div class="srcline"><b>Источник:</b> Книжный куб, 19 ноя, <code>2026-11-16_2026-11-22_book_cube.json</code>, id=5207</div>
+    </article>
+  </div>
+</section>
+
+<section id="watch" class="wrap">
+  <div class="shead rv"><span class="num">🛰</span><h2>На радаре, но без действий</h2></div>
+  <p class="lead rv">Идеи, за которыми стоит следить, но внедрять пока рано: не хватает примера, проверки или связи с backend-работой.</p>
+  <div class="watch">
+      <div class="watch-item rv">
+        <h4><span class="em">🧊</span> Правка агентного файла посреди сессии сбрасывает кэш</h4>
+        <div class="who"><a class="au" href="https://t.me/countwithsasha" target="_blank" rel="noopener">Поляков считает: AI, код и кейсы</a>
+          <span class="date">17 ноя</span></div>
+        <p>Тестируя Gemini Carbon, автор заметил, что обновление агентного файла сразу попадает в контекст и инвалидирует кэш; время жизни кэша он оценивает примерно в 15 минут. Замеров нет, и наблюдение сделано только на Gemini.</p>
+        <a class="src" href="https://t.me/countwithsasha/854" target="_blank" rel="noopener">Пост ↗</a>
+      </div>
+      <div class="watch-item rv">
+        <h4><span class="em">🪙</span> Codex-ревью перед публикацией нашло эксплойт с кошельком</h4>
+        <div class="who"><a class="au" href="https://t.me/neuraldeep" target="_blank" rel="noopener">Валера Ковальский</a>
+          <span class="date">17 ноя</span></div>
+        <p>Перед открытием кода браузерной MMO ревью Codex нашло, как печатать себе золото через перенос кошелька; сервер и так сверяет забеги с телеметрией. Промпта ревью и коммита с фиксом в посте нет.</p>
+        <a class="src" href="https://t.me/neuraldeep/2403" target="_blank" rel="noopener">Пост ↗</a>
+      </div>
+      <div class="watch-item rv">
+        <h4><span class="em">📏</span> Проверка одной строки AGENTS.md по CAFE(S)</h4>
+        <div class="who"><a class="au" href="https://t.me/book_cube" target="_blank" rel="noopener">Книжный куб</a>
+          <span class="date">20 ноя</span></div>
+        <p>Выпуск про метрики DX: медиана до первого ревью 40 минут при доле AI-кода 20–40% и 82 минуты при доле от 80%, но сравниваются разные организации. Сам метод проверки строки AGENTS.md описан только в материалах выпуска.</p>
+        <a class="src" href="https://t.me/book_cube/5208" target="_blank" rel="noopener">Пост ↗</a>
+      </div>
+  </div>
+</section>
+
+<section id="filtered" class="wrap">
+  <div class="shead rv"><span class="num">🧹</span><h2>Что отфильтровано</h2></div>
+  <div class="filtered rv"><span class="fcat">Шутки и мемы <b>4</b></span><span class="fcat">Реклама, анонсы и ивенты <b>13</b></span><span class="fcat">Research без действия <b>1</b></span><span class="fcat">Мнения и прочее без действия <b>27</b></span></div>
+</section>
+
+<section id="plan" class="wrap">
+  <div class="shead rv"><span class="num">🎯</span><h2>План на неделю</h2></div>
+  <p class="lead rv">Три действия из выводов выше, каждое можно сделать и проверить за вечер.</p>
+  <div class="checks"><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Запустить read-only аудит nginx</b> по своим репозиториям промптом из карточки 02 и сверить версии с advisory.</div><span class="when">до вторника</span></div><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Сделать одну фичу в трёх сессиях:</b> план в файл, реализация после /new, ревью на чистом контексте.</div><span class="when">до пятницы</span></div><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Начать счёт напоминаний агенту:</b> неделю записывать, какое правило из AGENTS.md пришлось повторить в чате.</div><span class="when">до воскресенья</span></div></div>
+</section>
+
+<section class="wrap">
+  <div class="shead rv"><span class="num">#</span><h2>Метаданные</h2></div>
+  <div class="meta rv">
+    <div><b>сгенерировано</b> 2026-11-22T14:20:37Z</div>
+    <div><b>окно</b> 2026-11-16 — 2026-11-22 (7 дней)</div>
+    <div><b>прочитано / в дайджест</b> 70 сообщений / 8 выводов; ещё 17 отложены без действия, 3 из них показаны «На радаре»</div>
+    <div><b>источник</b> живой <code>tdl chat export</code> за окно, 20 каналов, экспорт по chat_id; 25 медиа без подписи не учитывались</div>
+    <div><b>каналы с постами</b> 16</div>
+    <div><b>молчали в окне</b> 4: etechlead, sergeinotevskii, laxcity_lead, tuzov_ai_lab</div>
+    <div><b>недоступны</b> 0</div>
+  </div>
+</section>
+
+<footer>
+  Telegram AI Digest <b>2026-11-22</b> · собрано из AI- и agent-каналов Telegram (tdl export).<br>
+  Только практичное для backend и агентов. <span style="opacity:.6">суть → почему важно → как применить</span>
+</footer>
+
+<div id="lb">
+  <span class="close">×</span>
+  <img id="lbimg" src="" alt="">
+  <div class="lbcap" id="lbcap"></div>
+  <a class="lbbtn" id="lbbtn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/></svg>Открыть пост</a>
+</div>
+<script>
+(function(){
+  var prog=document.getElementById('progress');
+  function onScroll(){var h=document.documentElement;prog.style.width=((h.scrollTop)/(h.scrollHeight-h.clientHeight)*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var navlinks=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=navlinks.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;navlinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')===id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)spy.observe(s);});
+
+  // lightbox: data-full = картинка, data-href = пост
+  var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap'),lbbtn=document.getElementById('lbbtn');
+  document.querySelectorAll('.shot[data-full]').forEach(function(s){
+    s.addEventListener('click',function(){
+      lbimg.src=s.getAttribute('data-full');var w=+s.getAttribute('data-w')||0,h=+s.getAttribute('data-h')||0;lbimg.style.maxWidth=w?'min(94vw,'+(w/2)+'px)':'';lbimg.style.maxHeight=h?'min(80vh,'+(h/2)+'px)':'';
+      lbcap.textContent=s.getAttribute('data-cap')||'';
+      var href=s.getAttribute('data-href');
+      if(href){lbbtn.href=href;lbbtn.style.display='inline-flex';}else{lbbtn.style.display='none';}
+      lb.classList.add('on');
+    });
+  });
+  function close(){lb.classList.remove('on');lbimg.src='';}
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('close'))close();});
+  lbbtn.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+  document.querySelectorAll('.check').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('done');});});
+})();
+</script>
+</body>
+</html>
